@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { images } from '../../constants';
 import './About.scss';
+import { urlFor, client } from '../../client';
 
 const qualities = [
   { title: 'Fullstack Web Development', description: 'Design of .NET and Java applications using respective technology stacks', igmUrl: images.about01 },
@@ -10,6 +11,15 @@ const qualities = [
 ]
 
 const About = () => {
+  const [qualities, setQualities] = useState([]);
+
+  useEffect(() => {
+    const query = '*[_type == "qualities"]'
+
+    client.fetch(query)
+      .then((data) => setQualities(data))
+  }, []);
+
   return (
     <>
       <h2 className="head-text">
@@ -27,7 +37,7 @@ const About = () => {
             className="app__profile-item"
             key={quality.title + index}
           >
-            <img src={quality.igmUrl} alt={quality.title}></img>
+            <img src={urlFor(quality.igmUrl)} alt={quality.title}></img>
             <h2 className="bold-text" style={{ marginTop: 20 }}>{quality.title}</h2>
             <p className="p-text" style={{ marginTop: 20 }}>{quality.description}</p>
           </motion.div>
