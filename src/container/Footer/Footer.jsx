@@ -26,7 +26,12 @@ const Footer = () => {
       message: formData.message,
     };
 
-    emailjs.send('EMAILJS_SERVICE_ID', 'EMAILJS_TEMPLATE_ID', templateParams, 'EMAILJS_API_KEY')
+    emailjs.send(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      templateParams,
+      process.env.REACT_APP_EMAILJS_API_KEY
+    )
       .then(() => {
         setLoading(false);
         setIsFormSubmitted(true);
@@ -92,7 +97,7 @@ const Footer = () => {
         </div>
       ) : (
         <div>
-          <h3 className="head-text">Thank you for getting in touch!</h3>
+          <h3 className="head-text">Thanks for getting in touch!</h3>
         </div>
       )}
     </>
