@@ -108,7 +108,7 @@
     height: 100px;
     border-radius: 50%;
 
-    background: var(--white-color);
+    background: linear-gradient(90deg, var(--white-color) 0%, var(--lightGray-color) 100%);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 
     img {
@@ -120,35 +120,35 @@
   // circles with different height & width
 
   div:nth-child(1) {
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 250px;
   }
-
+  
   div:nth-child(2) {
-    margin: 1.75rem;
-    width: 150px;
-    height: 150px;
+    width: 400px;
+    height: 400px;
   }
 
   div:nth-child(3) {
-    width: 70px;
-    height: 70px;
+    width: 170px;
+    height: 170px;
   }
 
-  @media screen and (min-width: 2000px) {
-    div:nth-child(2) {
-      width: 400px;
-      height: 400px;
-    }
-
-    div:nth-child(3) {
-      width: 170px;
-      height: 170px;
-    }
-
+  @media screen and (max-width: 1200px) {
     div:nth-child(1) {
-      width: 200px;
-      height: 200px;
+      width: 100px;
+      height: 100px;
+    }
+  
+    div:nth-child(2) {
+      margin: 4rem;
+      width: 150px;
+      height: 150px;
+    }
+  
+    div:nth-child(3) {
+      width: 100px;
+      height: 100px;
     }
   }
 
@@ -166,29 +166,36 @@
 
 .app__header-img {
   flex: 1;
+  height: auto;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
+  padding: 0 4rem 0 4rem;
 
   img {
-    width: 40%;
-    z-index: 1;
+    width: 35vw; // Default responsive width for the image
+    max-width: 400px;
+    object-fit: contain;
     border-radius: 50%;
-
+    z-index: 1;
   }
 
   .overlay_circle {
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
     z-index: 0;
-    width: 120%;
-    height: 150%;
+    width: 37vw; 
+    max-width: 430px;
   }
 
+  // Media query for screen sizes under 1200px
   @media screen and (max-width: 1200px) {
-    margin: 2rem 0;
+    img {
+      width: 50vw; 
+    }
+
+    .overlay_circle {
+      width: 55vw;
+    }
   }
 }
