@@ -1,21 +1,27 @@
 import React from 'react';
-import { BsTwitter, BsInstagram } from 'react-icons/bs';
-import { FaFacebookF } from 'react-icons/fa';
+import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';  // LinkedIn and GitHub icons from Ant Design Icons
+import { HiOutlineDocumentText } from 'react-icons/hi';  // Icon for the resume
 
 const SocialMedia = () => {
   return (
     <div className="app__social">
-        <div>
-        <BsTwitter />
-        </div>
-        <div>
-        <FaFacebookF />
-        </div>
-        <div>
-        <BsInstagram />
-        </div>
-  </div>
-  )
-}
+      <div>
+        <a href="https://www.linkedin.com/in/chase-swick-bb94ba233" target="_blank" rel="noopener noreferrer">
+          <AiFillLinkedin />
+        </a>
+      </div>
+      <div>
+        <a href="https://github.com/Swicky97" target="_blank" rel="noopener noreferrer">
+          <AiFillGithub />
+        </a>
+      </div>
+      <div>
+        <a href="/assets/Chase_Swick_Resume.pdf" target="_blank" rel="noopener noreferrer">
+          <HiOutlineDocumentText />
+        </a>
+      </div>
+    </div>
+  );
+};
 
-export default SocialMedia
+export default SocialMedia;
