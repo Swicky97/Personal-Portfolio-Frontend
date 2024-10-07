@@ -2,13 +2,9 @@
     flex: 1;
     width: 100%;
     flex-direction: column;
+}
   
-    @media screen and (max-width: 768px) {
-      flex-direction: column;
-    }
-  }
-  
-  .app__footer-cards {
+.app__footer-cards {
     width: 60%;
     display: flex;
     justify-content: space-evenly;
@@ -17,114 +13,135 @@
     margin: 4em 2rem 2rem;
   
     .app__footer-card {
-      min-width: 290px;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-  
-      margin: 1rem 0;
-      padding: 1rem;
-      border-radius: 10px;
-      cursor: pointer;
-      background-color: #fef4f5;
-  
-      transition: all 0.3s ease-in-out;
-  
-      img {
+        min-width: 290px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        margin: 1rem 0;
+        padding: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: #fef4f5;
+
+        transition: all 0.3s ease-in-out;
+
+        img {
         width: 40px;
         height: 40px;
         margin: 0 0.7rem;
-      }
-  
-      p {
+        }
+
+        p {
         font-weight: 500;
-      }
-      a {
+        }
+        a {
         text-decoration: none;
         font-weight: 500;
-      }
-      &:hover {
+        }
+        &:hover {
         box-shadow: 0 0 25px #fef4f5;
-      }
-  
-      @media screen and (max-width: 450px) {
+        }
+
+        @media screen and (max-width: 450px) {
         width: 100%;
-      }
+        }
     }
-  
+
     @media screen and (max-width: 768px) {
-      width: 100%;
+        width: 100%;
     }
-  }
+}
   
-  .app__footer-cards .app__footer-card:last-child {
+.app__footer-cards .app__footer-card:last-child {
     background-color: #f2f7fb;
-  }
-  
-  .app__footer-cards .app__footer-card:last-child:hover {
+}
+
+.app__footer-cards .app__footer-card:last-child:hover {
     box-shadow: 0 0 25px #f2f7fb;
-  }
+}
   
-  .app__footer-form {
+.app__footer-form {
     width: 60%;
     flex-direction: column;
     margin: 1rem 2rem;
   
     div {
-      width: 100%;
-  
-      margin: 0.75rem 0;
-      border-radius: 10px;
-      cursor: pointer;
-      background-color: var(--primary-color);
-  
-      transition: all 0.3s ease-in-out;
-  
-      input,
-      textarea {
         width: 100%;
-        padding: 0.95rem;
-        border: none;
-        border-radius: 7px;
-        background-color: var(--white-color);
   
-        font-family: var(--font-base);
-        color: var(--secondary-color);
-        outline: none;
-      }
+        margin: 0.75rem 0;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: var(--primary-color);
+    
+        transition: all 0.3s ease-in-out;
+    
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.95rem;
+            border: none;
+            border-radius: 7px;
+            background-color: var(--white-color);
+    
+            font-family: var(--font-base);
+            color: var(--secondary-color);
+            outline: none;
+        }
   
-      textarea {
-        height: 170px;
-      }
-  
-      &:hover {
-        box-shadow: 0 0 25px var(--primary-color);
-      }
+        textarea {
+            height: 170px;
+        }
+    
+        &:hover {
+            box-shadow: 0 0 25px var(--primary-color);
+        }
     }
   
     button {
-      padding: 1rem 2rem;
-      border-radius: 10px;
-      border: none;
-      background-color: var(--secondary-color);
-  
-      font-weight: 500;
-      color: var(--white-color);
-      outline: none;
-      margin: 2rem 0 0 0;
-      font-family: var(--font-base);
-  
-      transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
-      cursor: pointer;
-  
-      &:hover {
-        background-color: #2430af;
-      }
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        border: none;
+        background-color: var(--secondary-color);
+    
+        font-weight: 500;
+        color: var(--white-color);
+        outline: none;
+        margin: 2rem 0 0 0;
+        font-family: var(--font-base);
+    
+        transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+        cursor: pointer;
+    
+        &:hover {
+            background-color: #2430af;
+        }
+    }
+
+    .error-text {
+        color: #E74C3C; 
+        font-size: 0.85rem; 
+        margin-top: 5px; 
+        display: block; 
+        text-align: left; 
+    }
+      
+    input.p-text,
+    textarea.p-text {
+        border: 2px solid #ddd; 
+        padding: 10px;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    input.p-text.error,
+    textarea.p-text.error {
+        border-color: #e74c3c;
     }
   
     @media screen and (max-width: 768px) {
       width: 100%;
       margin: 1rem 0;
     }
-  }
+}

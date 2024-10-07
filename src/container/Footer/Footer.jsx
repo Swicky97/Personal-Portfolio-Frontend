@@ -8,16 +8,32 @@ const Footer = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const { name, email, message } = formData;
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    setErrors({ ...errors, [name]: '' });
+  };
+
+  const validateForm = () => {
+    let errors = {};
+    if (!name.trim()) errors.name = 'Name is required';
+    if (!email.trim()) errors.email = 'Email is required';
+    if (!message.trim()) errors.message = 'Message is required';
+
+    setErrors(errors);
+    return Object.keys(errors).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!validateForm()) {
+      return; 
+    }
+
     setLoading(true);
 
     const templateParams = {
@@ -58,10 +74,10 @@ const Footer = () => {
       </div>
 
       {!isFormSubmitted ? (
-        <div className="app__footer-form app__flex">
-          <div className="app__flex">
+        <div className="app__footer-form">
+          <div>
             <input
-              className="p-text"
+              className={`p-text ${errors.name ? 'error' : ''}`}
               type="text"
               placeholder="Your Name"
               name="name"
@@ -69,10 +85,11 @@ const Footer = () => {
               onChange={handleChangeInput}
               required
             />
+            {errors.name && <span className="error-text">{errors.name}</span>}
           </div>
-          <div className="app__flex">
+          <div>
             <input
-              className="p-text"
+              className={`p-text ${errors.email ? 'error' : ''}`}
               type="email"
               placeholder="Your Email"
               name="email"
@@ -80,16 +97,18 @@ const Footer = () => {
               onChange={handleChangeInput}
               required
             />
+            {errors.email && <span className="error-text">{errors.email}</span>}
           </div>
           <div>
             <textarea
-              className="p-text"
+              className={`p-text ${errors.message ? 'error' : ''}`}
               placeholder="Your Message"
               value={message}
               name="message"
-              onChange={handleChangeInput}
+              onChange={handleChangeInput}   
               required
             />
+            {errors.message && <span className="error-text">{errors.message}</span>}
           </div>
           <button type="button" className="p-text" onClick={handleSubmit}>
             {!loading ? 'Send Message' : 'Sending...'}
