@@ -19,7 +19,7 @@ const About = () => {
       <h2 className="head-text">
         I am a <span>Fullstack Developer</span>
         <br />
-        Focused on <span>Strong Frontend Principles and Design</span>
+        Focused on <span>Strong Design Principles and Scalability</span>
       </h2>
 
       <div className="app__profiles">
