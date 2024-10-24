@@ -16,7 +16,7 @@ const SocialMedia = () => {
         </a>
       </div>
       <div>
-        <a href="/assets/Chase_Swick_Resume.pdf" target="_blank" rel="noopener noreferrer">
+        <a href="/assets/ChaseSwickResume.pdf" target="_blank" rel="noopener noreferrer">
           <HiOutlineDocumentText />
         </a>
       </div>
