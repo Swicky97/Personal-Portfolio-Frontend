@@ -103,6 +103,15 @@
   height: 100%;
   margin-left: 1rem;
 
+  @keyframes circularMotion {
+    0% {
+      transform: rotate(0deg) translateX(25px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(25px) rotate(-360deg);
+    }
+  }
+
   div {
     width: 100px;
     height: 100px;
@@ -110,6 +119,8 @@
 
     background: linear-gradient(90deg, var(--white-color) 0%, var(--lightGray-color) 100%);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+
+    animation: circularMotion 20s linear infinite;
 
     img {
       width: 60%;
@@ -125,13 +136,15 @@
   }
   
   div:nth-child(2) {
-    width: 400px;
-    height: 400px;
+    width: 200px;
+    height: 200px;
+    animation-delay: -5s;
   }
 
   div:nth-child(3) {
     width: 170px;
     height: 170px;
+    animation-delay: -10s;
   }
 
   @media screen and (max-width: 1200px) {
